@@ -6,6 +6,7 @@
 /[Bb]in/
 /[Aa]pk/
 /[Aa]ssetBundle/
+/UserSettings/
 /Assets/AssetStoreTools*
 # Visual Studio cache directory
 .vs/
