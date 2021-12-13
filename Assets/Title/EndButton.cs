@@ -21,16 +21,22 @@ public class EndButton : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    public void Update()
+    public void OnClick()
     {
-//        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
-//        {
-//#if UNITY_EDITOR
-//            UnityEditor.EditorApplication.isPlaying = false;
-//#else
-//		Application.Quit();
-//#endif
+        if (Input.GetMouseButtonUp(0) || Input.GetKeyDown("space"))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+		Application.Quit();
+#endif
+        }
+    }
+
+        // Update is called once per frame
+        public void Update()
+    {
+//        
 //        }
 
         //var scale = gameObject.transform.localScale;
