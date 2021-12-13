@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UniRx.Triggers;
+using UniRx;
 
 public class StartButton : MonoBehaviour
 {
@@ -10,36 +13,42 @@ public class StartButton : MonoBehaviour
     private float min_scale = 1.0f;
     // 拡大最大値
     private float max_scale = 2.0f;
-    // マウスが重なっているとき
-    private bool MouseOverlap = false;
+
     // 現在拡大率
     private float currentScaleValue = 0.005f;
 
+    private bool TouchFlag = false;
 
-    GameObject startbutton;
-
+    [SerializeField]
+    private Button m_btn;
 
     // Start is called before the first frame update
     public void Start()
     {
-       startbutton = GameObject.Find("StartButton"); 
+        m_btn.OnPointerDownAsObservable().Subscribe(_ => { OnPointerDown(); });
+        m_btn.OnPointerUpAsObservable().Subscribe(_ => { OnPointerUp(); });
     }
-    public void OnMouseOver()
-    {
-        //If your mouse hovers over the GameObject with the script attached, output this message
-    
-    }
-
 
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
+        if (Input.GetMouseButtonDown(0))
         {
+            TouchFlag = true;
+        }
+
+        if(Input.GetMouseButtonUp(0))
+        {
+            TouchFlag = false;
+            var scale = gameObject.transform.localScale;
+            scale.x = 1.0f;
+            scale.y = 1.0f;
+            gameObject.transform.localScale = scale;
             SceneManager.LoadScene("GameScene");
         }
 
-       
+        if (TouchFlag == true) 
+        {
             var scale = gameObject.transform.localScale;
 
             scale.x += currentScaleValue;
@@ -51,8 +60,23 @@ public class StartButton : MonoBehaviour
                 currentScaleValue = 0.005f;
 
             gameObject.transform.localScale = scale;
-
-        
-       
+        }
     }
+
+#if true
+    private void OnPointerDown() {
+
+        TouchFlag = true;
+    }
+
+    private void OnPointerUp() {
+
+        TouchFlag = false;
+        var scale = gameObject.transform.localScale;
+        scale.x = 1.0f;
+        scale.y = 1.0f;
+        gameObject.transform.localScale = scale;
+        SceneManager.LoadScene("GameScene");
+    }
+#endif
 }
