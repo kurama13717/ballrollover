@@ -16,6 +16,7 @@ public class AddForce : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        this.rb.velocity = new Vector3(0, 0, 0);
     }
 
     void FixedUpdate()
@@ -36,8 +37,9 @@ public class AddForce : MonoBehaviour
         Vector3 pos = myTransform.position;     // 座標を取得
         if (collision.gameObject.name == "Fall judgment") // ぶつかった相手の名前を取得(穴に落ちた時)
         {
-            rb.drag = 0;                 // 抗力を0
-            pos.y = 20;                  // リスポーン座標
+            this.rb.velocity = new Vector3(0, 0, 0);    // 速度を初期値に戻す
+            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
+            pos.y += 20;                 // リスポーン座標 y
             myTransform.position = pos;  // 座標を設定
         }
                 
