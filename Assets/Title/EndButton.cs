@@ -5,16 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EndButton : MonoBehaviour
-{
-    // Šg‘åÅ¬’l
-    private float min_scale = 1.0f;
-    // Šg‘åÅ‘å’l
-    private float max_scale = 2.0f;
-
-    // Œ»İŠg‘å—¦
-    private float currentScaleValue = 0.005f;
-
-
+{    
     // Start is called before the first frame update
     public void Start()
     {

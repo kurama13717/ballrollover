@@ -23,11 +23,8 @@ public class StartButton : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            audioSource.Play();
-            if (!audioSource.isPlaying) 
-            {
-                SceneManager.LoadScene("GameScene");
-            }            
+            SceneManager.LoadScene("GameScene");
+                   
         }
     }
 
