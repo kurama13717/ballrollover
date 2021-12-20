@@ -54,12 +54,7 @@ public class ObjectRotator : MonoBehaviour
                 //var newAngle = Vector3.zero;
                 newAngle.z = x * rotationSpeed.x;
 
-                if (newAngle.z < 0 - RotationAngleZ)
-                    newAngle.z = 0 - RotationAngleZ;
-                else if (RotationAngleZ < newAngle.z)
-                    newAngle.z = RotationAngleZ;
-
-                //targetObject.transform.Rotate(newAngle);
+                targetObject.transform.Rotate(newAngle);
                 lastMousePosition = Input.mousePosition;
             }
         }
