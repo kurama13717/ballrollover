@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 16201967}
   - component: {fileID: 16201966}
   - component: {fileID: 16201965}
-  - component: {fileID: 16201964}
   - component: {fileID: 16201968}
+  - component: {fileID: 16201964}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -173,11 +173,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 16201962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3c4bb0ba2f0fac49990f43eb3fc978e, type: 3}
+  m_Script: {fileID: 11500000, guid: 329eee24bf7373e48bb6413fdd3fb205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 16201968}
-  Timer: 0
 --- !u!114 &16201965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +221,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 16201964}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: MoveSelect, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
