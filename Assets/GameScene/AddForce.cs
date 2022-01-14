@@ -8,12 +8,12 @@ public class AddForce : MonoBehaviour
 {
    
     public Rigidbody rb;
-    public float fallout;       // °‚Æ‚Ì‹——£
-    public float coefficient;   // ‹ó‹C’ïRŒW”
     public float increase;      // ‘å‚«‚³A‘¬‚³‚Ì•Ï‰»—Ê
     public float scalelimit;    // ‘å‚«‚³§ŒÀ
     [SerializeField]
-    float LimitSpeed;
+    //public float fallout;       // °‚Æ‚Ì‹——£
+    //public float coefficient;   // ‹ó‹C’ïRŒW”
+    //float LimitSpeed;
     private bool isDamage { get; set; }
 
     void Start()
