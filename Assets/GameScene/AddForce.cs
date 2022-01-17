@@ -11,20 +11,23 @@ public class AddForce : MonoBehaviour
     public float increase;      // 大きさ、速さの変化量
     public float scalelimit;    // 大きさ制限
     [SerializeField]
+    private bool isDamage { get; set; }
+    int layerMask = 1 << 6;     // 床のレイヤー
+    int layerMask1 = 1 << 7;    // 壁のレイヤー
+    float totalTime = 0.0f;
+    float fadeCt = 0;
+    public Vector3 spheredown = new Vector3(0, -1, 0);
+
     //public float fallout;       // 床との距離
     //public float coefficient;   // 空気抵抗係数
     //float LimitSpeed;
-    private bool isDamage { get; set; }
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
         this.rb.velocity = new Vector3(0, 0, 0);
-
     }
 
-    float totalTime = 0.0f;
-    float fadeCt = 0;
 
     void FixedUpdate()
     {
@@ -54,12 +57,39 @@ public class AddForce : MonoBehaviour
         if (this.transform.localScale.x > scalelimit)
             this.transform.localScale = new Vector3(scalelimit, scalelimit, scalelimit);
 
-        
+        // レイキャスト関連
+        {
+
+            // 床との当たり判定
+            if (Physics.Raycast(
+                this.transform.position,
+                spheredown,
+                this.transform.localScale.x,
+                layerMask))
+            {
+                //Debug.DrawRay(transform.position, this.transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+                Debug.Log("Did Hit");
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, spheredown * this.transform.localScale.x / 2, Color.white);
+                Debug.Log("Did not Hit");
+                //Debug.Log(this.transform.localScale.x);
+            }
+
+            // 壁と当たった時
+            /*if (Physics.Raycast(
+                this.transform.position,
+                spheredown,
+                this.transform.localScale.x,
+                layerMask1))
+            {
+                Debug.Log("Did Hit Wall");
+            }*/
+        }
 
         if (isDamage)   // ダメージを受けた時
         {
-            //float level = Mathf.Sin(Time.deltaTime * 6.0f) / 2 + 0.5f;
-
             fadeCt += 2;
             float level = Mathf.Sin(fadeCt) / 2.0f + 0.5f;
             var renderer = this.gameObject.GetComponent<Renderer>();
@@ -69,7 +99,6 @@ public class AddForce : MonoBehaviour
 
             totalTime += Time.deltaTime;
             if (totalTime >= 3.0f) {
-                //this.gameObject.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
                 color.a = 1.0f;
                 renderer.material.color = color;
                 totalTime = 0.0f;
@@ -77,7 +106,7 @@ public class AddForce : MonoBehaviour
             }
         }
 
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
     }
 
 
@@ -104,16 +133,5 @@ public class AddForce : MonoBehaviour
             this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
             //StartCoroutine(OnDamage());
         }
-    }
-
-    public void OnDamage()
-    {
-
-        //yield return new WaitForSeconds(3.0f);
-
-        // 通常状態に戻す
-        isDamage = false;
-        this.gameObject.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
-
     }
 }
