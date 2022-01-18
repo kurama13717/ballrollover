@@ -20,13 +20,11 @@ public class selectbutton : MonoBehaviour
         }
     }
 
-    float totalTime = 0.0f;
-
+    
     // Update is called once per frame
     void Update()
     {
-        //totalTime += Time.deltaTime;
-        //if (totalTime >= 3.0f)
+       
             
     }
 }
