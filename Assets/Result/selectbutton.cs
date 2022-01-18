@@ -14,6 +14,10 @@ public class selectbutton : MonoBehaviour
 
     public void OnClick()
     {
+        if (Input.GetMouseButtonUp(0))
+        {
+            SceneManager.LoadScene("SelectScene");
+        }
     }
 
     float totalTime = 0.0f;
@@ -21,8 +25,8 @@ public class selectbutton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalTime += Time.deltaTime;
-        if (totalTime >= 3.0f)
-            SceneManager.LoadScene("SelectScene");
+        //totalTime += Time.deltaTime;
+        //if (totalTime >= 3.0f)
+            
     }
 }
