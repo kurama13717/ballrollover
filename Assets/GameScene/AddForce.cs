@@ -106,7 +106,7 @@ public class AddForce : MonoBehaviour
             }
         }
 
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
     }
 
 
