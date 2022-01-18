@@ -6807,7 +6807,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &1407193730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6898,7 +6898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   increase: 0.005
-  scalelimit: 0
+  scalelimit: 3
   spheredown: {x: 0, y: -1, z: 0}
 --- !u!1 &1419700795
 GameObject:
