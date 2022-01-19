@@ -1133,8 +1133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b432eea04357caf4eaa4249eb39955e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minute: 0
-  seconds: 0
 --- !u!114 &1932201737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,7 +1309,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2057381239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c331421064c984d82155b82e8fd814, type: 3}
+  m_Script: {fileID: 11500000, guid: cc53f91ea48412f4ba17b246c2ad4f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!82 &2057381242
@@ -1454,7 +1452,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2057381241}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Retry, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1

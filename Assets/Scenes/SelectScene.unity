@@ -423,8 +423,8 @@ GameObject:
   - component: {fileID: 946957078}
   - component: {fileID: 946957077}
   - component: {fileID: 946957076}
-  - component: {fileID: 946957075}
   - component: {fileID: 946957074}
+  - component: {fileID: 946957075}
   m_Layer: 5
   m_Name: Stage1
   m_TagString: Untagged
@@ -557,11 +557,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 946957072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3c4bb0ba2f0fac49990f43eb3fc978e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5519626327a673d45823bd8ad118964d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 946957074}
-  Timer: 0
 --- !u!114 &946957076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,7 +605,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 946957075}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: SelectStage1, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -631,14 +629,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.13759041, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -705,7 +703,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1127577099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c1ccbfab123774dbca06e84105bd38, type: 3}
+  m_Script: {fileID: 11500000, guid: eedf6683deaedf941965e14c89dc607e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1127577102
@@ -753,7 +751,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1127577101}
-        m_TargetAssemblyTypeName: EndButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: SelectStage2, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
