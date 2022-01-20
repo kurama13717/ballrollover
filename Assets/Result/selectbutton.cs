@@ -14,15 +14,29 @@ public class selectbutton : MonoBehaviour
 
     public void OnClick()
     {
+        
     }
-
-    float totalTime = 0.0f;
-
+    float TotalTimer = 0.0f;
+    
     // Update is called once per frame
     void Update()
     {
-        totalTime += Time.deltaTime;
-        if (totalTime >= 3.0f)
+        TotalTimer++;
+
+        if (TotalTimer > 720.0f && StartButton.StSe == 1)
+        {
             SceneManager.LoadScene("SelectScene");
+        }
+
+        if (TotalTimer > 720.0f && SelectStage1.SeSt1 == 1) 
+        {
+            SceneManager.LoadScene("GameScene1");
+        }
+
+        if (TotalTimer > 720.0f && SelectStage2.SeSt2 == 1)
+        {
+            SceneManager.LoadScene("GameScene2");
+        }
+
     }
 }

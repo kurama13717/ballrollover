@@ -13,7 +13,7 @@ public class AddForce : MonoBehaviour
     [SerializeField]
     private bool isDamage { get; set; }
     int layerMask = 1 << 6;     // 床のレイヤー
-    int layerMask1 = 1 << 7;    // 壁のレイヤー
+    //int layerMask1 = 1 << 7;    // 壁のレイヤー
     float totalTime = 0.0f;
     float fadeCt = 0;
     public Vector3 spheredown = new Vector3(0, -1, 0);
@@ -26,6 +26,7 @@ public class AddForce : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         this.rb.velocity = new Vector3(0, 0, 0);
+        Ray ray = new Ray(this.transform.localPosition, spheredown);
     }
 
 
@@ -59,27 +60,34 @@ public class AddForce : MonoBehaviour
 
         // レイキャスト関連
         {
+            RaycastHit hit;
 
             // 床との当たり判定
             if (Physics.Raycast(
-                this.transform.position,
+                this.transform.localPosition,
                 spheredown,
+                out hit,
                 this.transform.localScale.x,
                 layerMask))
             {
-                //Debug.DrawRay(transform.position, this.transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+                // レイが衝突した座標
+                Vector3 hitPos = hit.point;
+                if (hit.point.y - this.transform.localPosition.y < this.transform.localScale.y)
+                {
+                    this.transform.localPosition = new Vector3(this.transform.localPosition.x, hit.point.y + this.transform.localScale.y, this.transform.localPosition.z);
+                }
                 Debug.Log("Did Hit");
             }
             else
             {
-                Debug.DrawRay(transform.position, spheredown * this.transform.localScale.x / 2, Color.white);
+                Debug.DrawRay(transform.localPosition, spheredown * this.transform.localScale.x / 2, Color.white);
                 Debug.Log("Did not Hit");
                 //Debug.Log(this.transform.localScale.x);
             }
 
             // 壁と当たった時
             /*if (Physics.Raycast(
-                this.transform.position,
+                this.transform.localPosition,
                 spheredown,
                 this.transform.localScale.x,
                 layerMask1))
@@ -113,13 +121,13 @@ public class AddForce : MonoBehaviour
     void OnCollisionEnter(Collision collision) // 落下判定の床との当たり判定
     {
         Transform myTransform = this.transform; // transformを取得
-        Vector3 pos = myTransform.position;     // 座標を取得
+        Vector3 pos = myTransform.localPosition;     // 座標を取得
         if (collision.gameObject.name == "Fall judgment") // ぶつかった相手の名前を取得(穴に落ちた時)
         {
             this.rb.velocity = new Vector3(0, 0, 0);    // 速度を初期値に戻す
             this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
             pos.y += 20;                 // リスポーン座標 y
-            myTransform.position = pos;  // 座標を設定
+            myTransform.localPosition = pos;  // 座標を設定
         }
                 
     }

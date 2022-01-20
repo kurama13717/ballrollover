@@ -12,19 +12,19 @@ public class StartButton : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
     //public AudioClip Decision;
-    public float Timer = 0;
+    public static int StSe;
     // Start is called before the first frame update
     public void Start()
     {
-
+        StSe = 0;
     }
 
     public void OnClick()
     {
         if (Input.GetMouseButtonUp(0))
         {
-            SceneManager.LoadScene("GameScene");
-                   
+            StSe = 1;
+            SceneManager.LoadScene("GameScene");     
         }
     }
 
