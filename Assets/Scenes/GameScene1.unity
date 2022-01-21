@@ -6776,7 +6776,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c56b126c0e4b9bd40aafc8cea81a3da9, type: 2}
+  - {fileID: 2100000, guid: 54299ce81e5584b45a23d3fadbd08066, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6849,7 +6849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ieg: {fileID: 7149208431177842065, guid: 39ef85946ebf6c040a184da3de63b838, type: 3}
-  span: 0.02
+  span: 0.01
   obj: {fileID: 0}
   timer: 1
 --- !u!1 &1419700795

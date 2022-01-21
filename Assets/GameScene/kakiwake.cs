@@ -41,9 +41,10 @@ public class kakiwake : MonoBehaviour
                 if (Ieg != null)
                 {
                     obj = Instantiate(Ieg, transform.parent);
-                    obj.transform.localPosition = new Vector3(hit.point.x, hit.point.y+0.2f, hit.point.z);
+                    obj.transform.localPosition = new Vector3(hit.point.x, hit.point.y+0.1f, hit.point.z);
                     obj.transform.localEulerAngles = new Vector3(hit.transform.localEulerAngles.x,0, hit.transform.localEulerAngles.z);
                     obj.transform.localScale = new Vector3(0.1f*hue2.x, 0.1f, 0.1f*hue2.z);
+                    obj.transform.parent = hit.transform;
                 }
                 currentTime = 0f;
             }
