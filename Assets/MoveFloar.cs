@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveFloar : MonoBehaviour
 {
     public bool Direction;  // ˆÚ“®Œü‚«
+    public float Move;      // °‚ÌˆÚ“®‘¬“x
     float counter;
 
     // Start is called before the first frame update
@@ -18,9 +19,9 @@ public class MoveFloar : MonoBehaviour
     {
         var pos = transform.localPosition;
         if (Direction)
-            counter += 0.005f;
+            counter += Move;
         else
-            counter -= 0.005f;
+            counter -= Move;
         pos.x = Mathf.Sin(counter);
         transform.localPosition = pos;
     }
