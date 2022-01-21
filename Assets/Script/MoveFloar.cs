@@ -11,7 +11,12 @@ public class MoveFloar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        var renderer = this.gameObject.GetComponent<Renderer>();
+        var color = renderer.material.color;
+        color.r = 0.3f;
+        color.g = 0.3f;
+        color.b = 0.8f;
+        renderer.material.color = color;
     }
 
     // Update is called once per frame
@@ -22,7 +27,7 @@ public class MoveFloar : MonoBehaviour
             counter += Move;
         else
             counter -= Move;
-        pos.x = Mathf.Sin(counter);
+        pos.x = Mathf.Sin(counter) * 0.75f;
         transform.localPosition = pos;
     }
 }
