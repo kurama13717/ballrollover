@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class goal : MonoBehaviour
 {
+
+    public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = this.GetComponent<Rigidbody>();
+       
     }
 
     // Update is called once per frame
@@ -19,6 +22,18 @@ public class goal : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        SceneManager.LoadScene("ResultScene");
+        Transform myTransform = this.transform; // transform‚ğæ“¾
+        Vector3 pos = myTransform.localPosition;     // À•W‚ğæ“¾
+        if (collider.gameObject.name == "Sphere") // ‚Ô‚Â‚©‚Á‚½‘Šè‚Ì–¼‘O‚ğæ“¾(ŒŠ‚É—‚¿‚½)
+        {
+            SceneManager.LoadScene("ResultScene");
+        }
     }
+
+    void OnCollisionEnter(Collision collision) // —‰º”»’è‚Ì°‚Æ‚Ì“–‚½‚è”»’è
+    {
+        
+      
+    }
+
 }

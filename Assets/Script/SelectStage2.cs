@@ -7,7 +7,6 @@ public class SelectStage2 : MonoBehaviour
     // Start is called before the first frame update
     public static int SeSt2;
 
-
     void Start()
     {
         SeSt2 = 0;
@@ -24,7 +23,7 @@ public class SelectStage2 : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             SeSt2 = 1;
-            SceneManager.LoadScene("GameScene2");
+            SceneManager.LoadScene("SceneLoading");
 
         }
     }

@@ -627,7 +627,6 @@ RectTransform:
   - {fileID: 1741365171}
   - {fileID: 1928680687}
   - {fileID: 229406927}
-  - {fileID: 1312662944}
   - {fileID: 2057381240}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -663,10 +662,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312662943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 805024131}
+  m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1312662945
@@ -1130,7 +1129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1932201734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b432eea04357caf4eaa4249eb39955e3, type: 3}
+  m_Script: {fileID: 11500000, guid: a5f70aafeaa391c45831c4c1e4788f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1932201737
@@ -1293,7 +1292,7 @@ RectTransform:
   - {fileID: 1365504015}
   - {fileID: 1932201735}
   m_Father: {fileID: 805024131}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1452,8 +1451,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Retry, Assembly-CSharp
+      - m_Target: {fileID: 2057381241}
+        m_TargetAssemblyTypeName: WitchRetry, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:

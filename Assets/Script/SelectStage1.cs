@@ -12,21 +12,17 @@ public class SelectStage1 : MonoBehaviour
     {
         SeSt1 = 0;
     }
-
     // Update is called once per frame
     void Update()
     {
 
     }
-
     public void OnClick()
     {
         if (Input.GetMouseButtonUp(0))
         {
             SeSt1 = 1;
-            SceneManager.LoadScene("GameScene1");
-
+            SceneManager.LoadScene("SceneLoading");
         }
     }
-
 }
