@@ -17,6 +17,6 @@ public class Record : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            timerText.text = TimeMana.minute.ToString("00") + ":" + ((int)TimeMana.seconds).ToString("00");
+          timerText.text = TimeMana.minute.ToString("00") + ":" + ((int)TimeMana.seconds).ToString("00");
     }
 }

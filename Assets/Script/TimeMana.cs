@@ -16,8 +16,8 @@ public class TimeMana : MonoBehaviour
 
 	void Start()
 	{
-		minute = 0;
-		seconds = 0f;
+		minute = 2;
+		seconds = 20.0f;
 		oldSeconds = 0f;
 		timerText = GetComponentInChildren<Text>();
 	}
