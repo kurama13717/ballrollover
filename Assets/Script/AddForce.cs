@@ -124,10 +124,11 @@ public class AddForce : MonoBehaviour
         Vector3 pos = myTransform.localPosition;     // 座標を取得
         if (collision.gameObject.name == "Fall judgment") // ぶつかった相手の名前を取得(穴に落ちた時)
         {
-            this.rb.velocity = new Vector3(0, 0, 0);    // 速度を初期値に戻す
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);           // 速度を初期値に戻す
             this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
-            pos.y += 20;                 // リスポーン座標 y
-            myTransform.localPosition = pos;  // 座標を設定
+            pos.x = 0.0f;                       // リスポーン座標 y
+            pos.y += 50.0f;                     // リスポーン座標 y
+            myTransform.localPosition = pos;    // 座標を設定
         }
                 
     }
