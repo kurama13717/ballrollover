@@ -21,22 +21,25 @@ public class WitchRetry : MonoBehaviour
 
     public void OnClick()
     {
-        if (SelectStage2.SeSt2 == 1)
-        {
-            if (Input.GetMouseButtonUp(0))
-            {
-                SceneManager.LoadScene("GameScene");
-            }
-        }
 
         if (SelectStage1.SeSt1 == 1)
         {
             if (Input.GetMouseButtonUp(0))
             {
-                SceneManager.LoadScene("GameScene");
+                SceneManager.LoadScene("GameScene4");
             }
         }
-    }
 
+        if (SelectStage2.SeSt2 == 1)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                SceneManager.LoadScene("GameScene4");
+            }
+        }
+
+        
+    }
+   
 
 }

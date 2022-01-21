@@ -127,7 +127,7 @@ public class AddForce : MonoBehaviour
             this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);           // 速度を初期値に戻す
             this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
             pos.x = 0.0f;                       // リスポーン座標 y
-            pos.y += 50.0f;                     // リスポーン座標 y
+            pos.y += 70.0f;                     // リスポーン座標 y
             myTransform.localPosition = pos;    // 座標を設定
         }
                 
