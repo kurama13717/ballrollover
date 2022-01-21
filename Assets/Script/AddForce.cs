@@ -76,12 +76,12 @@ public class AddForce : MonoBehaviour
                 {
                     this.transform.localPosition = new Vector3(this.transform.localPosition.x, hit.point.y + this.transform.localScale.y, this.transform.localPosition.z);
                 }
-                Debug.Log("Did Hit");
+                //Debug.Log("Did Hit");
             }
             else
             {
                 Debug.DrawRay(transform.localPosition, spheredown * this.transform.localScale.x / 2, Color.white);
-                Debug.Log("Did not Hit");
+                //Debug.Log("Did not Hit");
                 //Debug.Log(this.transform.localScale.x);
             }
 
@@ -114,7 +114,7 @@ public class AddForce : MonoBehaviour
             }
         }
 
-        //Debug.Log(rb.velocity.magnitude);
+        Debug.Log(rb.velocity.magnitude);
     }
 
 
