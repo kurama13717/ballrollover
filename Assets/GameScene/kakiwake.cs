@@ -29,9 +29,9 @@ public class kakiwake : MonoBehaviour
         currentTime += Time.deltaTime;
         float y = hue1.y;
         y -= (float)0.6 * hue2.x;
-        Ray ray = new Ray(new Vector3(hue1.x, hue1.y, hue1.z), Vector3.down);
+        Ray ray = new Ray(new Vector3(hue1.x, hue1.y-0.5f, hue1.z), Vector3.down);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 4))
+        if (Physics.Raycast(ray, out hit, 3))
         {
             if (currentTime > span)
             {
