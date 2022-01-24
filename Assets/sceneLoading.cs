@@ -30,7 +30,7 @@ public class sceneLoading : MonoBehaviour
         }
         if (TotalTimer > 360.0f && SelectStage2.SeSt2 == 1)
         {
-            SceneManager.LoadScene("GameScene4");
+            SceneManager.LoadScene("GameScene5");
         }
     }
 }

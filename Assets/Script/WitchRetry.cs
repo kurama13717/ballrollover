@@ -26,7 +26,7 @@ public class WitchRetry : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                SceneManager.LoadScene("GameScene4");
+                SceneManager.LoadScene("GameScene1");
             }
         }
 
@@ -34,7 +34,7 @@ public class WitchRetry : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                SceneManager.LoadScene("GameScene");
+                SceneManager.LoadScene("GameScene5");
             }
         }
 

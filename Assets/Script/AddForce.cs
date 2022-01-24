@@ -19,6 +19,14 @@ public class AddForce : MonoBehaviour
     public Vector3 spheredown = new Vector3(0, -1, 0);
 
     private float power;
+    // 音データの再生装置を格納する変数
+    private AudioSource audio;
+
+    // 音データを格納する変数（Inspectorタブからも値を変更できるようにする）
+    [SerializeField]
+    private AudioClip sound;
+    [SerializeField]
+    private AudioClip sound2;
     //public Slider slider;
 
     //public float fallout;       // 床との距離
@@ -31,7 +39,8 @@ public class AddForce : MonoBehaviour
         this.rb.velocity = new Vector3(0, 0, 0);
         Ray ray = new Ray(this.transform.localPosition, spheredown);
         power = 0;
-       // slider.value = 0;
+        // slider.value = 0;
+        audio = gameObject.AddComponent<AudioSource>();
 
     }
 
@@ -138,6 +147,7 @@ public class AddForce : MonoBehaviour
             pos.x = 0.0f;                       // リスポーン座標 y
             pos.y += 70.0f;                     // リスポーン座標 y
             myTransform.localPosition = pos;    // 座標を設定
+            audio.PlayOneShot(sound2); //落下音
         }
 
         if (collision.gameObject.name == "Judgment Chain") // ぶつかった相手の名前を取得(穴に落ちた時)
@@ -168,6 +178,7 @@ public class AddForce : MonoBehaviour
             isDamage = true;
             this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
             this.rb.velocity = new Vector3(0.0f, 0.0f, 10.0f);
+            audio.PlayOneShot(sound);//衝突音
             //StartCoroutine(OnDamage());
         }
     }
