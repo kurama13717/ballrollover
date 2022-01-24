@@ -27,12 +27,12 @@ public class HIGHSCORE : MonoBehaviour
         {
             timerText.text = ho.ToString("00") + ":" + ka.ToString("00");
         }
-        if (ho == TimeMana.minute && ka < TimeMana.seconds) 
+        if (ho == TimeMana.minute && ka <= TimeMana.seconds) 
         {
             timerText.text = ho.ToString("00") + ":" + ka.ToString("00");
         }
 
-        if (ho == TimeMana.minute && ka > TimeMana.seconds)
+        if (ho == TimeMana.minute && ka >= TimeMana.seconds)
         {
             int ho = TimeMana.minute;
             float ka = TimeMana.seconds;
