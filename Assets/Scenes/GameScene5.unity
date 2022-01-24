@@ -4721,6 +4721,7 @@ GameObject:
   - component: {fileID: 1919610004}
   - component: {fileID: 1919610003}
   - component: {fileID: 1919610002}
+  - component: {fileID: 1919610005}
   - component: {fileID: 1919610001}
   m_Layer: 0
   m_Name: Wall
@@ -4821,6 +4822,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919609999}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1919610005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919609999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53137184621a36e4baddad09e6f50daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 0fce142fa1d4b7d42bac186577617ddb, type: 3}
 --- !u!1 &1922929026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4859,7 +4873,8 @@ MonoBehaviour:
   increase: 0.003
   scalelimit: 3
   spheredown: {x: 0, y: -1, z: 0}
-  slider: {fileID: 326847476}
+  sound: {fileID: 8300000, guid: 0fce142fa1d4b7d42bac186577617ddb, type: 3}
+  sound2: {fileID: 8300000, guid: ef923f97b3648ba4bb2afc45d59f6085, type: 3}
 --- !u!54 &1922929028
 Rigidbody:
   m_ObjectHideFlags: 0

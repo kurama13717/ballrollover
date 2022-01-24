@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Auido : MonoBehaviour
 {
-	public class PlayAudio : MonoBehaviour
-	{
+	
 		// 音データの再生装置を格納する変数
 		private AudioSource audio;
 
 		// 音データを格納する変数（Inspectorタブからも値を変更できるようにする）
 		[SerializeField]
-		private AudioClip sound;
+	    private AudioClip sound;
 
 		// Start is called before the first frame update
 		void Start()
@@ -28,11 +27,11 @@ public class Auido : MonoBehaviour
 		void OnCollisionEnter(Collision collision)
 		{
 			// 衝突した相手にPlayerタグが付いているとき
-			if (collision.gameObject.tag == "Sphere")
+			if (collision.gameObject.name == "Sphere")
 			{
 				// 音（sound）を一度だけ（PlayOneShot）再生する
 				audio.PlayOneShot(sound);
 			}
 		}
-	}
+	
 }
