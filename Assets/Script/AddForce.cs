@@ -19,7 +19,7 @@ public class AddForce : MonoBehaviour
     public Vector3 spheredown = new Vector3(0, -1, 0);
 
     private float power;
-    public Slider slider;
+    //public Slider slider;
 
     //public float fallout;       // °‚Æ‚Ì‹——£
     //public float coefficient;   // ‹ó‹C’ïRŒW”
@@ -31,14 +31,14 @@ public class AddForce : MonoBehaviour
         this.rb.velocity = new Vector3(0, 0, 0);
         Ray ray = new Ray(this.transform.localPosition, spheredown);
         power = 0;
-        slider.value = 0;
+       // slider.value = 0;
 
     }
 
 
     void FixedUpdate()
     {
-        slider.value += rb.velocity.magnitude * 0.000001f;
+        //slider.value += rb.velocity.magnitude * 0.000001f;
 
 
 #if false 
