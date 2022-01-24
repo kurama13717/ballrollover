@@ -18,7 +18,6 @@ public class AddForce : MonoBehaviour
     float fadeCt = 0;
     public Vector3 spheredown = new Vector3(0, -1, 0);
 
-    private float power;
     // 音データの再生装置を格納する変数
     private AudioSource audio;
 
@@ -38,7 +37,6 @@ public class AddForce : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         this.rb.velocity = new Vector3(0, 0, 0);
         Ray ray = new Ray(this.transform.localPosition, spheredown);
-        power = 0;
         // slider.value = 0;
         audio = gameObject.AddComponent<AudioSource>();
 
@@ -132,7 +130,10 @@ public class AddForce : MonoBehaviour
             }
         }
 
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
+
+        Gauge.vel = rb.velocity.magnitude;
+        Debug.Log(Gauge.vel / 25.0f);
     }
 
 
