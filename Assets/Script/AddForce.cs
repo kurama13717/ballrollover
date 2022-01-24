@@ -130,7 +130,25 @@ public class AddForce : MonoBehaviour
             pos.y += 70.0f;                     // リスポーン座標 y
             myTransform.localPosition = pos;    // 座標を設定
         }
-                
+
+        if (collision.gameObject.name == "Judgment Chain") // ぶつかった相手の名前を取得(穴に落ちた時)
+        {
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);           // 速度を初期値に戻す
+            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
+            pos.x = 10.0f;                      // リスポーン座標 y
+            pos.y += 70.0f;                     // リスポーン座標 y
+            myTransform.localPosition = pos;    // 座標を設定
+        }
+
+        if (collision.gameObject.name == "Goal judgment") // ぶつかった相手の名前を取得(穴に落ちた時)
+        {
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);           // 速度を初期値に戻す
+            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
+            pos.x = 0.0f;                       // リスポーン座標 y
+            pos.y = -700.0f;                    // リスポーン座標 y
+            pos.z = 2100.0f;
+            myTransform.localPosition = pos;    // 座標を設定
+        }
     }
 
     void OnTriggerEnter(Collider collider)  // 壁との当たり判定
@@ -140,6 +158,7 @@ public class AddForce : MonoBehaviour
         {
             isDamage = true;
             this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 10.0f);
             //StartCoroutine(OnDamage());
         }
     }
