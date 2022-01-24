@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 0
-  Move: 0.003
+  Move: 0.001
 --- !u!54 &132861442
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 1
-  Move: 0.005
+  Move: 0.001
 --- !u!54 &706369052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5178,7 +5178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 0
-  Move: 0.005
+  Move: 0.001
 --- !u!54 &2040570622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5529,7 +5529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 1
-  Move: 0.003
+  Move: 0.001
 --- !u!54 &2094874188
 Rigidbody:
   m_ObjectHideFlags: 0
