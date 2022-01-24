@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 
 public class AddForce : MonoBehaviour
@@ -18,6 +18,9 @@ public class AddForce : MonoBehaviour
     float fadeCt = 0;
     public Vector3 spheredown = new Vector3(0, -1, 0);
 
+    private float power;
+    public Slider slider;
+
     //public float fallout;       // °‚Æ‚Ì‹——£
     //public float coefficient;   // ‹ó‹C’ïRŒW”
     //float LimitSpeed;
@@ -27,11 +30,17 @@ public class AddForce : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         this.rb.velocity = new Vector3(0, 0, 0);
         Ray ray = new Ray(this.transform.localPosition, spheredown);
+        power = 0;
+        slider.value = 0;
+
     }
 
 
     void FixedUpdate()
     {
+        slider.value += rb.velocity.magnitude * 0.000001f;
+
+
 #if false 
         Vector3 force = new Vector3(10f, 0.0f, 0.0f);    // —Í‚ğİ’è
         //rb.AddForce(force, ForceMode.Force);            // —Í‚ğ‰Á‚¦‚é
