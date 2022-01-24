@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 
 public class AddForce : MonoBehaviour
@@ -18,6 +18,9 @@ public class AddForce : MonoBehaviour
     float fadeCt = 0;
     public Vector3 spheredown = new Vector3(0, -1, 0);
 
+    private float power;
+    public Slider slider;
+
     //public float fallout;       // 床との距離
     //public float coefficient;   // 空気抵抗係数
     //float LimitSpeed;
@@ -27,11 +30,17 @@ public class AddForce : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         this.rb.velocity = new Vector3(0, 0, 0);
         Ray ray = new Ray(this.transform.localPosition, spheredown);
+        power = 0;
+        slider.value = 0;
+
     }
 
 
     void FixedUpdate()
     {
+        slider.value += rb.velocity.magnitude * 0.000001f;
+
+
 #if false 
         Vector3 force = new Vector3(10f, 0.0f, 0.0f);    // 力を設定
         //rb.AddForce(force, ForceMode.Force);            // 力を加える
@@ -130,7 +139,25 @@ public class AddForce : MonoBehaviour
             pos.y += 70.0f;                     // リスポーン座標 y
             myTransform.localPosition = pos;    // 座標を設定
         }
-                
+
+        if (collision.gameObject.name == "Judgment Chain") // ぶつかった相手の名前を取得(穴に落ちた時)
+        {
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);           // 速度を初期値に戻す
+            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
+            pos.x = 10.0f;                      // リスポーン座標 y
+            pos.y += 70.0f;                     // リスポーン座標 y
+            myTransform.localPosition = pos;    // 座標を設定
+        }
+
+        if (collision.gameObject.name == "Goal judgment") // ぶつかった相手の名前を取得(穴に落ちた時)
+        {
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);           // 速度を初期値に戻す
+            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
+            pos.x = 0.0f;                       // リスポーン座標 y
+            pos.y = -700.0f;                    // リスポーン座標 y
+            pos.z = 2100.0f;
+            myTransform.localPosition = pos;    // 座標を設定
+        }
     }
 
     void OnTriggerEnter(Collider collider)  // 壁との当たり判定
@@ -140,6 +167,7 @@ public class AddForce : MonoBehaviour
         {
             isDamage = true;
             this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);  // 大きさを初期値に戻す
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 10.0f);
             //StartCoroutine(OnDamage());
         }
     }

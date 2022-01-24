@@ -20,15 +20,15 @@ public class sceneLoading : MonoBehaviour
     void Update()
     {
         TotalTimer++;
-        if (TotalTimer > 720.0f && MoveSelect.SeSt == 1)
+        if (TotalTimer > 360.0f && MoveSelect.SeSt == 1)
         {
             SceneManager.LoadScene("SelectScene");
         }
-        if (TotalTimer > 720.0f && SelectStage1.SeSt1 == 1)
+        if (TotalTimer > 360.0f && SelectStage1.SeSt1 == 1)
         {
             SceneManager.LoadScene("GameScene4");
         }
-        if (TotalTimer > 720.0f && SelectStage2.SeSt2 == 1)
+        if (TotalTimer > 360.0f && SelectStage2.SeSt2 == 1)
         {
             SceneManager.LoadScene("GameScene4");
         }
